@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Almendra+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Almendra:wght@400;700&display=swap');
 
 html,
 body {
-  height: 100vh;
-  width: 100%;
+  height: 100%;
+  width: 100vw;
   margin: 0;
   padding: 0;
   font-family: 'Almendra', serif;
@@ -13,37 +14,58 @@ body {
 .wall {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: 200vw;
   background-image: url("../img/old_paper.jpg");
   text-align: center;
+}
+
+.maj {
+  font-family: 'Almendra SC', serif;
 }
 
 /* background-image: url("../img/old_paper.jpg"); */
 
 h1 {
+  position: absolute;
+  top: 8vw;
+  bottom: 0;
+  right: 0;
+  left: 0;
   margin: 0;
-  padding: 7% 0 2% 0;
-  font-size: 170px;
+  font-size: 12vw;
   color: rgb(255, 162, 0);
-  -webkit-text-stroke: 5px rgb(89, 21, 21);
+  -webkit-text-stroke: 0.01vw rgb(89, 21, 21);
+  letter-spacing: 0.3vw;
+  font-family: 'Almendra SC', serif;
+
 }
 
-.wall button#play {
-  border-radius: 10px;
-  border-width: 4px;
+.wall button.play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vw;
+  border-width: 0.5vw;
   background-color: rgb(89, 21, 21);
   border-color: rgb(255, 162, 0);
   font-family: 'Almendra', serif;
-
+  position: absolute;
+  top: 27vw;
+  bottom: 13vw;
+  right: 39vw;
+  left: 39vw;
 }
 
 .wall a {
   color: rgb(255, 162, 0);
   text-decoration: none;
-  font-size: 90px;
-
-
+  font-size: 7vw;
+  position: absolute;
+  top: -1vw;
+  bottom: 0;
+  right: 0;
+  left: 0.5vw;
 }
 
 @keyframes slideDownFadeIN {
@@ -106,14 +128,14 @@ h1 {
 .container .closebtn {
   text-decoration: none;
   float: right;
-  font-size: 4vw;
+  font-size: 3vw;
   font-weight: bold;
   color: rgb(89, 21, 21);
   position: absolute;
-  top: 16vw;
-  left: 65vw;
-  right: 35vw;
-  bottom: 68vw
+  top: 16.5vw;
+  left: 66vw;
+  right: 34vw;
+  bottom: 67.5vw
 }
 
 .closebtn:hover,
@@ -130,6 +152,8 @@ h1 {
   left: 40vw;
   bottom: 0;
   width: 60vw;
+  padding: 0;
+  margin: 0;
 }
 
 input#name {
@@ -151,36 +175,242 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -5.5vw;
-  margin-left: -42vw;
+  position: absolute;
+  top: -5.5vw;
+  right: 41vw;
+  left: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
 }
 
 label {
-  font-weight: 700;
   font-size: 2.7vw;
-  width: 12vw;
+  width: 11.5vw;
   text-align: center;
+  color: rgb(89, 21, 21);
+  -webkit-text-stroke: 0.08vw rgb(89, 21, 21);
 }
 
 .fname #clic {
   opacity: 0;
   width: 20.5vw;
   position: absolute;
-  top: 8.3vw;
+  top: 14vw;
   right: 0vw;
-  left: 1.25vw;
+  left: 1.1vw;
   bottom: 0;
   margin: 0;
   padding: 0;
 }
 
+.container a {
+  width: 1vw;
+}
+
 .fname p {
-  font-weight: 700;
   position: absolute;
-  top: 7vw;
+  top: 13.5vw;
   right: 0;
-  left: 4.5vw;
+  left: 3.7vw;
   bottom: 0;
-  color: black;
+  color: #591515;
+  -webkit-text-stroke: 0.08vw #591515;
   font-size: 4vw;
+}
+
+#intro {
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 200vw;
+  background-image: url("../img/old_paper.jpg");
+  flex-direction: column;
+  color: rgb(89, 21, 21);
+  letter-spacing: 0.15vw;
+}
+
+#lettrine {
+  margin: 0;
+  padding: 0;
+  height: 9vw;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+
+#intro img {
+  width: 9vw;
+  height: 9vw;
+  margin: 4vw 0 0 10vw;
+}
+
+#intro p {
+  margin: 0;
+  padding: 0;
+  font-size: 2.8vw;
+}
+
+#p {
+  width: 100vw;
+  height: 100vw;
+  margin-top: 4vw;
+}
+
+#txt {
+  margin: 5vw 0 0 10vw;
+}
+
+#msg {
+  margin: 5vw 0 0 10vw;
+  font-size: 2.8vw;
+}
+
+.return #clic2 {
+  width: 15vw;
+  margin-left: 10vw;
+  transform: rotate(180deg) rotateX(180deg);
+}
+
+.return #clic3 {
+  width: 15vw;
+  margin-left: 48vw;
+}
+
+
+.return a {
+  text-decoration: none;
+}
+
+#no {
+  color: #591515;
+  text-decoration: none;
+  position: absolute;
+  top: 40vw;
+  left: 30vh;
+  right: 0;
+  bottom: 0;
+}
+
+#yes {
+  color: #591515;
+  text-decoration: none;
+  position: absolute;
+  top: 40vw;
+  left: 160vh;
+  right: 0;
+  bottom: 0;
+}
+
+#game {
+  display: none;
+}
+
+
+#next #frame {
+  position: absolute;
+  width: 100vw;
+  height: 50vw;
+  z-index: 1;
+}
+
+#next #castle {
+  width: 100vw;
+  height: 49vw;
+  padding-top: 0.3vw;
+
+}
+
+#kl {
+  display: none;
+  position: absolute;
+  top: 26vw;
+  bottom: 0;
+  left: -3vw;
+  right: 0;
+  width: 17%;
+  -webkit-transition: right 1s, -webkit-transform 1.2s ease-in-out;
+  -webkit-transform: translateX(25vw);
+}
+
+#kr {
+  display: none;
+  position: absolute;
+  top: 26vw;
+  bottom: 0;
+  left: 80vw;
+  right: 0;
+  width: 17%;
+  -webkit-transition: left 1s, -webkit-transform 1.2s ease-in-out;
+  -webkit-transform: translateX(-20vw);
+}
+
+#dl {
+  display: none;
+  position: absolute;
+  top: 12.7vw;
+  bottom: 0;
+  left: -3vw;
+  right: 0;
+  width: 37%;
+  -webkit-transition: left 1s, -webkit-transform 1.2s ease-in-out;
+  -webkit-transform: translateX(20vw);
+}
+
+#dr {
+  display: none;
+  position: absolute;
+  top: 12.7vw;
+  bottom: 0;
+  left: 80vw;
+  right: 0;
+  width: 37%;
+  -webkit-transition: left 1s, -webkit-transform 1.2s ease-in-out;
+  -webkit-transform: translateX(-30vw);
+}
+
+#pl {
+  display: none;
+  position: absolute;
+  top: 27vw;
+  bottom: 0;
+  left: -3vw;
+  right: 0;
+  width: 9.5%;
+  -webkit-transition: right 1s, -webkit-transform 1.2s ease-in-out;
+  -webkit-transform: translateX(30vw);
+}
+
+#pr {
+  display: none;
+  position: absolute;
+  top: 27vw;
+  bottom: 0;
+  left: 80vw;
+  right: 0;
+  width: 9.5%;
+  -webkit-transition: left 1s, -webkit-transform 1.2s ease-in-out;
+  -webkit-transform: translateX(-18vw);
+}
+
+#gamer {
+  text-transform: uppercase;
+  font-size: 2vw;
+  color: #deb025;
+  z-index: 10;
+}
+
+#heude {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15vw;
+  height: 4vw;
+  z-index: 10;
+  position: absolute;
+  top: 2.2vw;
+  left: 31vw;
+  right: 0;
+  bottom: 0;
 }
