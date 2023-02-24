@@ -1,0 +1,414 @@
+/*-------------------- import de font --------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+
+/*-------------------- body & html --------------------*/
+body,
+html {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
+    background-color: #000000;
+    overflow: hidden;
+    height: 500vh;
+    width: 100%;
+
+}
+
+/*-------------------- Section Navigation --------------------*/
+.nav_bg {
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    border: solid 3px #fff;
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    z-index: 200;
+    -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1), -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.nav_checkbox {
+    display: none;
+}
+
+.nav_label {
+    height: 3.5rem;
+    width: 3.5rem;
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    border-radius: 30%;
+    z-index: 2000;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav_burger {
+    position: relative;
+    margin-top: 52.3%;
+    margin-left: 12%;
+}
+
+.nav_burger,
+.nav_burger::before,
+.nav_burger::after {
+    z-index: 350;
+    width: 25px;
+    height: 0.1rem;
+    background-color: #ffffff;
+    display: inline-block;
+}
+
+.nav_burger::before,
+.nav_burger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+
+.nav_burger::before {
+    top: -7px;
+}
+
+.nav_burger::after {
+    top: 7px;
+}
+
+.nav_checkbox:checked+.nav_label .nav_burger {
+    background-color: transparent;
+}
+
+.nav_checkbox:checked+.nav_label .nav_burger::before {
+    top: 0;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.nav_checkbox:checked+.nav_label .nav_burger::after {
+    top: 0;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.nav_checkbox:checked~.nav_bg {
+    background-color: rgb(0, 0, 0);
+    transform: scale(80);
+}
+
+.nav_checkbox:checked~.nav_menu {
+    opacity: 1;
+    width: 100vw;
+    left: 0
+}
+
+.nav_menu {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -500px;
+    z-index: 350;
+    opacity: 0;
+    width: 0;
+    -webkit-transition: all .6s;
+    transition: all .6s;
+}
+
+.nav_list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+}
+
+.nav_list li {
+    margin: 4rem 0;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.nav_list .nav_link {
+    font-family: 'Montserrat', sans-serif;
+    padding: 1rem 2rem;
+    font-weight: 100;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+    background-size: 220%;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+}
+
+.nav_list .nav_link .number {
+    font-size: 1.2rem;
+    padding-right: 1rem;
+    color: #ffffff;
+}
+
+.nav_list .nav_link span {
+    position: relative;
+    z-index: 1;
+    font-size: 2rem;
+    overflow-x: hidden;
+}
+
+.nav_list .nav_link {
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    position: relative;
+    margin-bottom: 50px;
+    transition: all .2s;
+    overflow: hidden;
+    z-index: 1;
+    width: max-content;
+    display: block;
+}
+
+.nav_list .nav_link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    transition: all .4s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.nav_list .nav_link:hover::before {
+    left: 100%;
+}
+
+.nav_list .nav_link::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 100%;
+    margin-top: -2px;
+    left: 100%;
+    width: 100%;
+    height: 4px;
+    background: #ffffff;
+    transition: all .3s;
+    transition-delay: .4s;
+}
+
+.nav_list .nav_link:hover::after {
+    left: 0%;
+}
+
+/*-------------------- Section présentation --------------------*/
+
+#pres {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 5% 0 0 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 0%;
+    color: rgb(255, 255, 255);
+    font-size: 600%;
+}
+
+h2 {
+    margin: 1%;
+    color: rgb(255, 255, 255);
+    font-size: 300%;
+}
+
+p {
+    margin-bottom: 10%;
+    color: rgb(255, 255, 255);
+    font-size: 600%;
+}
+
+#pres img {
+    height: 5%;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 93%;
+    left: 50%;
+    right: 50%;
+}
+
+.arow_down_accueil {
+    visibility: hidden;
+    font-size: 14px;
+}
+
+/*-------------------- Section à propos --------------------*/
+
+#apropos {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: red;
+}
+
+#apropos img {
+    height: 5%;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 103%;
+    left: 50%;
+    right: 50%;
+}
+
+.arow_up_apropos {
+    visibility: hidden;
+    font-size: 14px;
+}
+
+#down_apropos img {
+    height: 5%;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 193%;
+    left: 50%;
+    right: 50%;
+}
+
+.arow_down_apropos {
+    visibility: hidden;
+    font-size: 14px;
+}
+
+/*-------------------- Section compétence --------------------*/
+
+#competence {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+
+}
+
+#competence img {
+    height: 5%;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 203%;
+    left: 50%;
+    right: 50%;
+}
+
+.arow_up_competence {
+    visibility: hidden;
+    font-size: 14px;
+}
+
+#down_competence img {
+    height: 5%;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 293%;
+    left: 50%;
+    right: 50%;
+}
+
+.arow_down_competence {
+    visibility: hidden;
+    font-size: 14px;
+}
+
+/*-------------------- Section portfolio --------------------*/
+
+#portfolio {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: violet;
+}
+
+#portfolio img {
+    height: 5%;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 303%;
+    left: 50%;
+    right: 50%;
+}
+
+.arow_up_portfolio {
+    visibility: hidden;
+    font-size: 14px;
+}
+
+#down_portfolio img {
+    height: 5%;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 393%;
+    left: 50%;
+    right: 50%;
+}
+
+.arow_down_portfolio {
+    visibility: hidden;
+    font-size: 14px;
+}
+
+/*-------------------- Section contact --------------------*/
+
+#contact {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: yellow;
+}
+
+#contact img {
+    height: 5%;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 403%;
+    left: 50%;
+    right: 50%;
+}
+
+.arow_up_contact {
+    visibility: hidden;
+    font-size: 14px;
+}
+
+#down_contact img {
+    height: 5%;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 493%;
+    left: 50%;
+    right: 50%;
+}
+
+.arow_down_contact {
+    visibility: hidden;
+    font-size: 14px;
+}
