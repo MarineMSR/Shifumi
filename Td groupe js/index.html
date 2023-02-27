@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width,hight=divice-hight, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    <title>Shi Fu Mi</title>
+    <title>Hime Ryu Kishi</title>
 </head>
 
 <body>
     <section class="wall" id="wall2">
-        <h1> Hime Ryu Kishi</h1>
-        <button class="play"><a href="#id01"><span class="maj">J</span>ouer</a></button>
+        <h1>Hime Ryu Kishi</h1>
+        <button class="play"><span class="maj">J</span>ouer</button>
         <div id="id01" class="modal">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -24,10 +24,7 @@
                             <div class="fname">
                                 <label for="prénom"><span class="maj">H</span>alte ! Qui va là ?</label>
                                 <input type="text" id="name" name="nom" placeholder="Votre prénom ici" maxlength="10" required>
-                                <a href="" onclick="hidepage()">
-                                    <p>Entrer</p>
-                                    <img id="clic" src="./assets/img/panel-arrow.png" alt="">
-                                </a>
+                                <button id="enter">Entrer</button>
                             </div>
                         </form>
                 </div>
@@ -50,22 +47,30 @@
         </div>
         <span id="msg"></span>
         <div class="return">
-            <a href="" onclick="returnpage()">
-                <img id="clic2" src="./assets/img/panel-arrow.png" alt="">
-                <p id="no">Non...</p>
-            </a>
-            <a href="" onclick="nextpage()">
-                <img id="clic3" src="./assets/img/panel-arrow.png" alt="">
-                <p id="yes">Oui!</p>
-            </a>
+            <img id="clic2" src="./assets/img/panel-arrow.png" alt="">
+            <button id="no">Non...</button>
+            <img id="clic3" src="./assets/img/panel-arrow.png" alt="">
+
+            <button id="yes">Oui!</button>
         </div>
     </section>
     <section id="game">
         <section id="next">
+            <div id="id02" class="modal">
+                <a href="#" class="closebtn2">X</a>
+                <!-- <img class="choose" src="./assets/img/panel.png" alt=""> -->
+                <div class="box">
+                    <button class="profileP profil">Princesse<img src="./assets/img/princess.png" alt=""></button>
+                    <button class="profileD profil">Dragon<img src="./assets/img/dragon.png" alt=""></button>
+                    <button class="profileK profil">Chevalier<img src="./assets/img/knight.png" alt=""></button>
+                </div>
+            </div>
             <div id="heude">
                 <span id="gamer"></span>
+                <p class="jeu">Hime Ryu Kishi</p>
             </div>
-            
+            <p class="dest">DESTIN</p>
+
             <img id="frame" src="./assets/img/frame.png" alt="">
             <div id="fight">
                 <img id="kl" src="./assets/img/knight-left.png" alt="">
@@ -76,6 +81,13 @@
                 <img id="pr" src="./assets/img/princess-right.png" alt="">
             </div>
             <img id="castle" src="./assets/img/castle.jpeg" alt="">
+
+            <div class="result">
+                <p id="scorep"></p>
+            </div>
+            <div class="resultbot">
+                <p id="scoreb"></p>
+            </div>
 
         </section>
     </section>
