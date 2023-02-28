@@ -18,12 +18,13 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <header class="container">
-                        <a href="#" class="closebtn">X</a>
+                        <a href="" class="closebtn">X</a>
                         <img src="./assets/img/panel.png" alt="">
                         <form class="firstname" action="" autocomplete="off">
                             <div class="fname">
                                 <label for="prénom"><span class="maj">H</span>alte ! Qui va là ?</label>
-                                <input type="text" id="name" name="nom" placeholder="Votre prénom ici" maxlength="10" required>
+                                <input type="text" id="name" name="nom" placeholder="Votre prénom ici" maxlength="10"
+                                    required>
                                 <button id="enter">Entrer</button>
                             </div>
                         </form>
@@ -57,19 +58,22 @@
     <section id="game">
         <section id="next">
             <div id="id02" class="modal">
-                <a href="#" class="closebtn2">X</a>
-                <!-- <img class="choose" src="./assets/img/panel.png" alt=""> -->
                 <div class="box">
-                    <button class="profileP profil">Princesse<img src="./assets/img/princess.png" alt=""></button>
-                    <button class="profileD profil">Dragon<img src="./assets/img/dragon.png" alt=""></button>
-                    <button class="profileK profil">Chevalier<img src="./assets/img/knight.png" alt=""></button>
+                    <button class="profileP profil">P<img src="./assets/img/princess.png" alt=""></button>
+                    <button class="profileD profil">D<img src="./assets/img/dragon.png" alt=""></button>
+                    <button class="profileK profil">C<img src="./assets/img/knight.png" alt=""></button>
                 </div>
             </div>
             <div id="heude">
                 <span id="gamer"></span>
-                <p class="jeu">Hime Ryu Kishi</p>
+                <p class="jeu"><span class="maj">H</span>ime <span class="maj">R</span>yu <span class="maj">K</span>ishi</p>
+                <p class="result" id="scorep"></p>
+                <p class="resultbot" id="scoreb"></p>
+                <p class="moyenneP"></p>
+                <p class="moyenneB"></p>
+
             </div>
-            <p class="dest">DESTIN</p>
+            <p class="dest"><span class="maj">D</span>ESTIN</p>
 
             <img id="frame" src="./assets/img/frame.png" alt="">
             <div id="fight">
@@ -81,14 +85,22 @@
                 <img id="pr" src="./assets/img/princess-right.png" alt="">
             </div>
             <img id="castle" src="./assets/img/castle.jpeg" alt="">
-
-            <div class="result">
-                <p id="scorep"></p>
+            <div class="winLost">
+                <img class="win" src="./assets/img/win.png" alt="">
+                <img class="lost" src="./assets/img/lost.png" alt="">
+                <img class="equality" src="./assets/img/equality.png" alt="">
             </div>
-            <div class="resultbot">
-                <p id="scoreb"></p>
+            <div class="anim">
+                <img class="fireL" src="./assets/img/fire-ball.png" alt="">
+                <img class="heartL" src="./assets/img/heart.png" alt="">
+                <img class="beerL" src="./assets/img/beer-pint.png" alt="">
+                <img class="fireR" src="./assets/img/fire-ball-bot.png" alt="">
+                <img class="heartR" src="./assets/img/heart.png" alt="">
+                <img class="beerR" src="./assets/img/beer-pint.png" alt="">
             </div>
-
+            <p class="result" id="scorep"></p>
+            <p class="resultbot" id="scoreb"></p>
+            <button class="restart">Rejouer</button>
         </section>
     </section>
     <script src="./assets/js/scripte.js"></script>

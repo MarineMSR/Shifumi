@@ -45,21 +45,28 @@ for (let i = 0; i < buttons.length; i++) {
         const player = buttons[i].className;
         const robot = buttons[Math.floor(Math.random() * buttons.length)].className;
         let result = "";
-        if (player === robot) {
-            result = "Egalité";
-        }
-        else if ((player === "profileP profil" && robot === "profileK profil") || (player === "profileK profil" && robot === "profileD profil") || (player === "profileD profil") && (robot === "profileP profil")) {
+        if ((player === "profileP profil" && robot === "profileK profil") || (player === "profileK profil" && robot === "profileD profil") || (player === "profileD profil") && (robot === "profileP profil")) {
             result = "Gagné";
+        }
+        else if (player === robot) {
+            result = "Egalité";
         }
         else {
             result = "Perdu";
         }
+        setTimeout(function () { weapons(result,player,robot) }, 1500);
+        setTimeout(() => {
+            document.querySelector(".restart").style.display = ("block")
+        }, 4000);
+        setTimeout(function () { changescore(result) }, 4000);
 
-        score(result)
-        chooseperso(player)
-        choosebot(robot)
+        score(result);
+        chooseperso(player);
+        choosebot(robot);
+        
     });
 }
+
 
 // récuperation des profils et fermeture de la modale
 let profils = document.querySelectorAll(".profil")
@@ -76,47 +83,105 @@ function score(scresult) {
     if (scresult == "Gagné") {
         scoreNumb++;
     }
-    else if(scresult = "Perdu") {
+    else if (scresult == "Perdu") {
         scoreNumbBot++;
     }
     else {
-        scoreNumb == scoreNumb;
-        scoreNumbBot == scoreNumbBot;
+
     };
     document.getElementById("scorep").innerText = scoreNumb;
     document.getElementById("scoreb").innerText = scoreNumbBot;
+    average(scoreNumb, scoreNumbBot);
 };
 
-function chooseperso(playerpara) {
-    if (playerpara === "profileP profil" ){
-        document.querySelector("#pl").style.transitionDuration = "1.2s";
-        document.querySelector("#pl").style.transitionTimingFunction = "ease-in-out";
-        document.querySelector("#pl").style.transform = "translateX(30vw)";
+function average(a, b) {
+    if (a == 0 && b == 0) {
+        document.querySelector(".moyenneP").innerText = "0%";
+        document.querySelector(".moyenneB").innerText = "0%";
     }
-    else if (playerpara === "profileD profil"){
-        document.querySelector("#dl").style.transitionDuration = "1.2s";
-        document.querySelector("#dl").style.transitionTimingFunction = "ease-in-out";
-        document.querySelector("#dl").style.transform = "translateX(30vw)";    }
+    else if (a == 0) {
+        document.querySelector(".moyenneB").innerText = "100%";
+        document.querySelector(".moyenneP").innerText = "0%";
+
+    }
+    else if (b == 0) {
+        document.querySelector(".moyenneP").innerText = "100%";
+        document.querySelector(".moyenneB").innerText = "0%";
+
+    }
     else {
-        document.querySelector("#kl").style.transitionDuration = "1.2s";
-        document.querySelector("#kl").style.transitionTimingFunction = "ease-in-out";
-        document.querySelector("#kl").style.transform = "translateX(30vw)";    }
+        document.querySelector(".moyenneP").innerText = `${(a * 100 / (a + b)).toFixed(1)}%`;
+        document.querySelector(".moyenneB").innerText = `${(b * 100 / (a + b)).toFixed(1)}%`;
+    }
+}
+
+function chooseperso(playerpara) {
+    if (playerpara === "profileP profil") {
+        document.querySelector("#pl").classList.toggle("leftToRight");
+    }
+    else if (playerpara === "profileD profil") {
+        document.querySelector("#dl").classList.toggle("leftToRight");
+    }
+    else {
+        document.querySelector("#kl").classList.toggle("leftToRight");
+    }
 }
 
 function choosebot(robotpara) {
-    if (robotpara === "profileP profil" ){
-        document.querySelector("#pr").style.transitionDuration = "1.2s";
-        document.querySelector("#pr").style.transitionTimingFunction = "ease-in-out";
-        document.querySelector("#pr").style.transform = "translateX(-30vw)";
+    if (robotpara === "profileP profil") {
+        document.querySelector("#pr").classList.toggle("rightToLeft");
     }
-    else if (robotpara === "profileD profil"){
-        document.querySelector("#dr").style.transitionDuration = "1.2s";
-        document.querySelector("#dr").style.transitionTimingFunction = "ease-in-out";
-        document.querySelector("#dr").style.transform = "translateX(-30vw)";    }
+    else if (robotpara === "profileD profil") {
+        document.querySelector("#dr").classList.toggle("rightToLeft");
+    }
     else {
-        document.querySelector("#kr").style.transitionDuration = "1.2s";
-        document.querySelector("#kr").style.transitionTimingFunction = "ease-in-out";
-        document.querySelector("#kr").style.transform = "translateX(-30vw)";    }
+        document.querySelector("#kr").classList.toggle("rightToLeft");
+    }
 }
 
+document.querySelector(".restart").addEventListener("click",
+    function playagain() {
+        document.querySelector(".restart").style.display = "none";
+        document.querySelector(".leftToRight").classList.remove("leftToRight");
+        document.querySelector(".rightToLeft").classList.remove("rightToLeft");
+        document.querySelector(".win").style.display = "none";
+        document.querySelector(".lost").style.display = "none";
+        document.querySelector(".equality").style.display = "none";
+        nextPage();
+    });
 
+function changescore(winloseequal) {
+    if (winloseequal == "Gagné") {
+        document.querySelector(".win").style.display = "block";
+    }
+    else if (winloseequal == "Perdu") {
+        document.querySelector(".lost").style.display = "block";
+    }
+    else {
+        document.querySelector(".equality").style.display = "block";
+    }
+}
+
+function weapons(a,b,c){
+    if(a == "Gagné" && b == "profileP profil"){
+        document.querySelector(".heartL").style.display = "block";
+    }
+    else if(a == "Gagné" && b == "profileD profil"){
+        document.querySelector(".fireL").style.display = "block";
+    }
+    else if (a == "Gagné" && b == "profileK profil"){
+        document.querySelector(".beerL").style.display = "block";
+    }
+    else if (a == "Perdu" && c == "profileP profil"){
+        document.querySelector(".heartR").style.display = "block";
+    }
+    else if (a == "Perdu" && c == "profileD profil"){
+        document.querySelector(".fireR").style.display = "block";
+    }
+    else if (a == "Perdu" && c == "profileK profil"){
+        document.querySelector(".beerR").style.display = "block";
+    }
+    else{
+        clearTimeout(setTimeout(function () { changescore(result) }, 4000));
+    }
+}
