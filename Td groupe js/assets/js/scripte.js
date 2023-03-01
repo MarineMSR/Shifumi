@@ -54,11 +54,11 @@ for (let i = 0; i < buttons.length; i++) {
         else {
             result = "Perdu";
         }
-        setTimeout(function () { weapons(result,player,robot) }, 1500);
+        // setTimeout(function () { weapons(result,player,robot) }, 1500);
         setTimeout(() => {
             document.querySelector(".restart").style.display = ("block")
-        }, 4000);
-        setTimeout(function () { changescore(result) }, 4000);
+        }, 2000);
+        setTimeout(function () { changescore(result) }, 2000);
 
         score(result);
         chooseperso(player);
@@ -162,26 +162,50 @@ function changescore(winloseequal) {
     }
 }
 
-function weapons(a,b,c){
-    if(a == "Gagné" && b == "profileP profil"){
-        document.querySelector(".heartL").style.display = "block";
-    }
-    else if(a == "Gagné" && b == "profileD profil"){
-        document.querySelector(".fireL").style.display = "block";
-    }
-    else if (a == "Gagné" && b == "profileK profil"){
-        document.querySelector(".beerL").style.display = "block";
-    }
-    else if (a == "Perdu" && c == "profileP profil"){
-        document.querySelector(".heartR").style.display = "block";
-    }
-    else if (a == "Perdu" && c == "profileD profil"){
-        document.querySelector(".fireR").style.display = "block";
-    }
-    else if (a == "Perdu" && c == "profileK profil"){
-        document.querySelector(".beerR").style.display = "block";
-    }
-    else{
-        clearTimeout(setTimeout(function () { changescore(result) }, 4000));
-    }
-}
+// function weapons(a,b,c){
+//     if(a == "Gagné" && b == "profileP profil"){
+//         document.querySelector("#hL").classList.toggle("heartL");
+//     }
+//     else if(a == "Gagné" && b == "profileD profil"){
+//         document.querySelector("#fL").classList.toggle("fireL");
+//     }
+//     else if (a == "Gagné" && b == "profileK profil"){
+//         document.querySelector("#bL").classList.toggle("beerL");
+//     }
+//     else if (a == "Perdu" && c == "profileP profil"){
+//         document.querySelector("#hR").classList.toggle("heartR");
+//     }
+//     else if (a == "Perdu" && c == "profileD profil"){
+//         document.querySelector("#fR").classList.toggle("fireR");
+//     }
+//     else if (a == "Perdu" && c == "profileK profil"){
+//         document.querySelector("#bR").classList.toggle("beerR");
+//     }
+//     else{
+
+//     }
+// }
+
+// function disableWeapons(a,b,c){
+//     if(a == "Gagné" && b == "profileP profil"){
+//         document.querySelector("#hL").classList.toggle("heartL");
+//     }
+//     else if(a == "Gagné" && b == "profileD profil"){
+//         document.querySelector("#fL").classList.toggle("fireL");
+//     }
+//     else if (a == "Gagné" && b == "profileK profil"){
+//         document.querySelector("#bL").classList.toggle("beerL");
+//     }
+//     else if (a == "Perdu" && c == "profileP profil"){
+//         document.querySelector("#hR").classList.toggle("heartR");
+//     }
+//     else if (a == "Perdu" && c == "profileD profil"){
+//         document.querySelector("#fR").classList.toggle("fireR");
+//     }
+//     else if (a == "Perdu" && c == "profileK profil"){
+//         document.querySelector("#bR").classList.toggle("beerR");
+//     }
+//     else{
+
+//     }
+// }

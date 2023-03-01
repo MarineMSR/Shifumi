@@ -756,7 +756,7 @@ label {
 }
 
 .fireL {
-  display: none;
+  display: block;
   position: absolute;
   left: 39vw;
   top: 23vw;
@@ -767,7 +767,7 @@ label {
 }
 
 .heartL {
-  display: none;
+  display: block;
   position: absolute;
   left: 41.7vw;
   top: 24vw;
@@ -779,7 +779,7 @@ label {
 
 
 .beerL {
-  display: none;
+  display: block;
   transform: rotatey(180deg) rotate(-30deg);
   position: absolute;
   left: 34.6vw;
@@ -791,7 +791,7 @@ label {
 }
 
 .fireR {
-  display: none;
+  display: block;
   position: absolute;
   left: 41vw;
   top: 23vw;
@@ -802,7 +802,7 @@ label {
 }
 
 .heartR {
-  display: none;
+  display: block;
   position: absolute;
   left: 36vw;
   top: 24vw;
@@ -813,7 +813,7 @@ label {
 }
 
 .beerR {
-  display: none;
+  display: block;
   transform: rotate(-30deg);
   position: absolute;
   left: 35vw;
