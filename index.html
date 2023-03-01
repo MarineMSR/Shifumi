@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,hight=divice-hight, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <title>Hime Ryu Kishi</title>
+</head>
+
+<body>
+    <section class="wall" id="wall2">
+        <h1>Hime Ryu Kishi</h1>
+        <button class="play"><span class="maj">J</span>ouer</button>
+        <div id="id01" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <header class="container">
+                        <a href="" class="closebtn">X</a>
+                        <img src="./assets/img/panel.png" alt="">
+                        <form class="firstname" action="" autocomplete="off">
+                            <div class="fname">
+                                <label for="prénom"><span class="maj">H</span>alte ! Qui va là ?</label>
+                                <input type="text" id="name" name="nom" placeholder="Votre prénom ici" maxlength="10"
+                                    required>
+                                <button id="enter">Entrer</button>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="intro">
+        <div id="lettrine">
+            <img src="./assets/img/lettrine-i.png" alt="">
+            <div id="p">
+                <p>l Était Une Fois, Dans Un Royaume Lointain,</p>
+                <p>Une Princesse, Un Chevalier Et Un Dragon.</p>
+            </div>
+        </div>
+        <div id="txt">
+            <p id="p2">La Princesse Use De Son Charme Pour Séduire Le Chevalier.</p>
+            <p>Le Dragon Se Repaît De La Chair Fraîche De La Princesse.</p>
+            <p>Et Le Chevalier Terrasse Le Terrible Dragon.</p>
+        </div>
+        <span id="msg"></span>
+        <div class="return">
+            <img id="clic2" src="./assets/img/panel-arrow.png" alt="">
+            <button id="no">Non...</button>
+            <img id="clic3" src="./assets/img/panel-arrow.png" alt="">
+
+            <button id="yes">Oui!</button>
+        </div>
+    </section>
+    <section id="game">
+        <section id="next">
+            <div id="id02" class="modal">
+                <div class="box">
+                    <button class="profileP profil">P<img src="./assets/img/princess.png" alt=""></button>
+                    <button class="profileD profil">D<img src="./assets/img/dragon.png" alt=""></button>
+                    <button class="profileK profil">C<img src="./assets/img/knight.png" alt=""></button>
+                </div>
+            </div>
+            <div id="heude">
+                <span id="gamer"></span>
+                <p class="jeu"><span class="maj">H</span>ime <span class="maj">R</span>yu <span class="maj">K</span>ishi</p>
+                <p class="result" id="scorep"></p>
+                <p class="resultbot" id="scoreb"></p>
+                <p class="moyenneP"></p>
+                <p class="moyenneB"></p>
+
+            </div>
+            <p class="dest"><span class="maj">D</span>ESTIN</p>
+
+            <img id="frame" src="./assets/img/frame.png" alt="">
+            <div id="fight">
+                <img id="kl" src="./assets/img/knight-left.png" alt="">
+                <img id="kr" src="./assets/img/knight-right.png" alt="">
+                <img id="dl" src="./assets/img/dragon-left.png" alt="">
+                <img id="dr" src="./assets/img/dragon-right.png" alt="">
+                <img id="pl" src="./assets/img/princess-left.png" alt="">
+                <img id="pr" src="./assets/img/princess-right.png" alt="">
+            </div>
+            <img id="castle" src="./assets/img/castle.jpeg" alt="">
+            <div class="winLost">
+                <img class="win" src="./assets/img/win.png" alt="">
+                <img class="lost" src="./assets/img/lost.png" alt="">
+                <img class="equality" src="./assets/img/equality.png" alt="">
+            </div>
+            <!-- <div class="anim">
+                <img id="fL" class="fireL" src="./assets/img/fire-ball.png" alt="">
+                <img id="hL" class="heartL" src="./assets/img/heart.png" alt="">
+                <img id="bL" class="beerL" src="./assets/img/beer-pint.png" alt="">
+                <img id="fR" class="fireR" src="./assets/img/fire-ball-bot.png" alt="">
+                <img id="hR" class="heartR" src="./assets/img/heart.png" alt="">
+                <img id="bR" class="beerR" src="./assets/img/beer-pint.png" alt="">
+            </div> -->
+            <p class="result" id="scorep"></p>
+            <p class="resultbot" id="scoreb"></p>
+            <button class="restart">Rejouer</button>
+        </section>
+    </section>
+    <script src="./assets/js/scripte.js"></script>
+</body>
+
+</html>
