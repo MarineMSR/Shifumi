@@ -1,3 +1,4 @@
+screen.lockOrientation('landscape')
 // bouton jouer
 document.querySelector(".play").addEventListener("click", openModal)
 function openModal() {
